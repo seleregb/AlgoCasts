@@ -17,6 +17,19 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+    // let stepsArr = [];
+    let stepChar = '#';
+    for (let index = 1; index <= n; index++) {
+        let step = stepChar.repeat(index) + ' '.repeat(n - index);
+        // // stepsArr.push([step])
+        console.log(step)
+    }
+
+    // stepsArr.forEach(element => {
+    //     console.log(element.toString());
+    // });
+
+}
 
 module.exports = steps;
