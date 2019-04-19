@@ -17,19 +17,40 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-    // let stepsArr = [];
-    let stepChar = '#';
-    for (let index = 1; index <= n; index++) {
-        let step = stepChar.repeat(index) + ' '.repeat(n - index);
-        // // stepsArr.push([step])
-        console.log(step)
+function steps(n, row = 0, stair = '') {
+    if (n === row) { // at the last row
+        return;
     }
 
-    // stepsArr.forEach(element => {
-    //     console.log(element.toString());
-    // });
+    if (n === stair.length) { // hit the end of a row
+        console.log(stair);
+        steps(n, row + 1); // go to the next row
+        return;
+    }
+
+    if (stair.length <= row) {
+        stair += '#';
+    } else {
+        stair += ' ';
+    }
+
+    steps(n, row, stair);
 
 }
 
 module.exports = steps;
+
+// function steps(n) {
+//     // let stepsArr = [];
+//     let stepChar = '#';
+//     for (let index = 1; index <= n; index++) {
+//         let step = stepChar.repeat(index) + ' '.repeat(n - index);
+//         // // stepsArr.push([step])
+//         console.log(step)
+//     }
+
+//     // stepsArr.forEach(element => {
+//     //     console.log(element.toString());
+//     // });
+
+// }
