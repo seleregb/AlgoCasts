@@ -9,17 +9,17 @@
 //   fib(4) === 3
 
 function memoize(fn) {
-    const cache = {};
-    return function(...args) {
-        if (cache[args]) {
-            return cache[args];
-        }
+  const cache = {};
+  return function(...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
 
-        const result = fn.apply(this, args);
-        cache[args] = result;
+    const result = fn.apply(this, args);
+    cache[args] = result;
 
-        return result;
-    };
+    return result;
+  };
 }
 
 function slowFib(n) {
